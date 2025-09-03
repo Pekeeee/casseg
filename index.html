@@ -493,15 +493,23 @@ hoverDropdown(); mql.addEventListener('change', hoverDropdown);
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 <script>
 (function(){
-  emailjs.init("TU_USER_ID"); // tu user ID de EmailJS
+  emailjs.init("NwCUdAlGmeIA59IrK"); // 👈 tu Public Key de EmailJS
 })();
+
 document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
-  emailjs.sendForm("service_xxxx","template_xxxx", this)
-    .then(()=>alert("✅ Mensaje enviado con éxito"))
-    .catch(err=>alert("❌ Error al enviar: "+err));
+
+  emailjs.sendForm("service_6i6bj1b","template_6tahsm8", this)
+    .then(function(){
+      alert("✅ Mensaje enviado con éxito");
+      document.getElementById("contactForm").reset();
+    }, function(error){
+      alert("❌ Error al enviar: " + JSON.stringify(error));
+    });
 });
 </script>
+
+
 
 </body>
 </html>

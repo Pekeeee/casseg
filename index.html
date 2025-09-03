@@ -129,6 +129,33 @@ footer .divider{opacity:.14; border-color:#fff}
   .map-wrap{min-height:300px}
   .map-text{right:10px; top:12px; transform:none; max-width:70%; font-size:.92rem}
 }
+
+/* === CONTACTO – diseño sencillo (como el screenshot) === */
+#contacto{ background:#eef2ff; }
+#contacto .contact-card{
+  background:#fff; border:1px solid #e9eef7; border-radius:14px;
+  padding:20px; box-shadow:0 18px 60px -28px rgba(11,21,57,.25);
+}
+#contacto .contact-title{ font-weight:700; color:#0b1539; margin-bottom:.25rem; }
+#contacto .contact-sub{ color:#64748b; margin-bottom:1rem; }
+
+#contacto .form-label{ font-weight:600; color:#0f172a; margin-bottom:.35rem; }
+#contacto .form-control, #contacto textarea{
+  border:1px solid #e3e8f3; background:#f8fafc; border-radius:10px;
+  padding:.7rem .9rem; transition:border-color .15s, box-shadow .15s, background .15s;
+}
+#contacto .form-control:focus, #contacto textarea:focus{
+  background:#fff; border-color:#b9c8ff; box-shadow:0 0 0 .18rem rgba(32,91,171,.12);
+}
+
+#contacto .btn-simple{
+  background:#2563eb; color:#fff; border:0; border-radius:8px;
+  padding:.55rem 1.2rem; font-weight:600;
+}
+#contacto .btn-simple:hover{ filter:brightness(1.05); }
+
+
+
 </style>
 
 <!-- OG/Twitter -->
@@ -341,13 +368,35 @@ footer .divider{opacity:.14; border-color:#fff}
       <div class="col-lg-6" data-aos="fade-right">
         <h2 class="section-heading">Contacto</h2>
         <p class="text-muted">Escríbenos y un especialista te responderá a la brevedad.</p>
-       <form id="contactForm" class="row g-3">
-  <input type="text" name="name" placeholder="Nombre" required>
-  <input type="email" name="email" placeholder="Correo" required>
-  <input type="text" name="subject" placeholder="Asunto">
-  <textarea name="message" placeholder="Mensaje" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
+          <form id="contactForm" novalidate>
+            <!-- Fila: Nombre + Correo -->
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Nombre <span class="text-danger">*</span></label>
+                <input id="name" name="name" type="text" class="form-control" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Correo <span class="text-danger">*</span></label>
+                <input id="email" name="email" type="email" class="form-control" placeholder="tucorreo@ejemplo.com" required>
+              </div>
+            </div>
+
+            <!-- Asunto -->
+            <div class="mt-3">
+              <label for="subject" class="form-label">Asunto</label>
+              <input id="subject" name="subject" type="text" class="form-control" placeholder="Ej. Cotización de estudio hidrológico">
+            </div>
+
+            <!-- Mensaje -->
+            <div class="mt-3">
+              <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
+              <textarea id="message" name="message" rows="5" class="form-control" placeholder="Cuéntanos brevemente sobre tu proyecto" required></textarea>
+            </div>
+
+            <div class="mt-3">
+              <button type="submit" class="btn btn-simple">Enviar</button>
+            </div>
+          </form>
 
       </div>
 
